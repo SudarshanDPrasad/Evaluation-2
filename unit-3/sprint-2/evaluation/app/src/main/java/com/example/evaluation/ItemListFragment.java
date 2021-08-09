@@ -30,13 +30,6 @@ public class ItemListFragment extends Fragment {
 
 
     @Override
-    public void onCreate(@Nullable  Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        dilaydata();
-        setRecycler();
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -44,24 +37,25 @@ public class ItemListFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull  View view, @Nullable  Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initviews(view);
-
+        dilaydata();
+        setRecycler();
     }
 
-    private void dilaydata() {
+    private void setRecycler() {
         listAdaptor = new ListAdaptor(responseModels);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(listAdaptor);
     }
 
-    private void setRecycler() {
+    private void dilaydata() {
         ApiService apiService = Network.getInstance().create(ApiService.class);
         Call<ArrayList<ResponseModel>> call = apiService.data("shivarajp",
-                "2cbe00030c04472c9d8ad4b0ec112dbe","raw",
-                "c651391e428182f08d60d59e79073f3fcf79b858","nobroker");
+                "2cbe00030c04472c9d8ad4b0ec112dbe", "raw",
+                "c651391e428182f08d60d59e79073f3fcf79b858", "nobroker");
         call.enqueue(new Callback<ArrayList<ResponseModel>>() {
             @Override
             public void onResponse(Call<ArrayList<ResponseModel>> call, Response<ArrayList<ResponseModel>> response) {
@@ -72,7 +66,7 @@ public class ItemListFragment extends Fragment {
 
             @Override
             public void onFailure(Call<ArrayList<ResponseModel>> call, Throwable t) {
-                Toast.makeText(getContext(),t.getMessage(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -81,6 +75,12 @@ public class ItemListFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerview);
         btn1 = view.findViewById(R.id.button1);
 
-
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dilaydata();
+                setRecycler();
+            }
+        });
     }
 }

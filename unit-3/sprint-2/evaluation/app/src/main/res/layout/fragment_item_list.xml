@@ -6,14 +6,25 @@
     android:background="#FFB6C1"
     tools:context=".ItemListFragment">
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Item List as Goes on"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/button1"
+        android:background="@android:color/transparent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
+        android:layout_margin="20dp"
         android:layout_below="@id/button1"
         android:layout_height="wrap_content" />
 
