@@ -28,6 +28,7 @@ public class ListAdaptor extends RecyclerView.Adapter<ListHolder> {
     public void onBindViewHolder(@NonNull ListHolder holder, int position) {
         ResponseModel responseModel = responseModelList.get(position);
         holder.setData(responseModel);
+
     }
 
     @Override
