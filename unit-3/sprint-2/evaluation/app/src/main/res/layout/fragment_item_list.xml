@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFB6C1"
+    tools:context=".ItemListFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Item List as Goes on"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="75dp"
+        android:layout_height="67.5dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/birds3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/TvTittle1"
+        android:textColor="@color/black"
+        android:layout_alignTop="@id/imageview"
+        android:text="Title 1"
+        android:layout_toRightOf="@id/imageview" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/TvTittle2"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        android:layout_toRightOf="@id/imageview"
+        android:text="SubTitle 1"
+       android:layout_below="@id/TvTittle1" />
+
+</RelativeLayout>
