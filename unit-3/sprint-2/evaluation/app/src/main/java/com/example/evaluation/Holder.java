@@ -27,6 +27,8 @@ public class Holder  extends RecyclerView.ViewHolder {
     }
 
     public void setData(ResponseModel responseModel) {
+
+        tvdummy.setText("Hey the pick the trolly sand is the best for the muscle and strength \n if we work like this for few days and then we can be the best body builder in the town");
         tvtille1.setText(responseModel.getTitle());
         tvtittle2.setText(responseModel.getSubTitle());
         Glide.with(imageView).load(responseModel.getImage()).into(imageView);
