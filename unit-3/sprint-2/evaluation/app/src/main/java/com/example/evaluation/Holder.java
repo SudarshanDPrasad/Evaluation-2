@@ -24,6 +24,7 @@ public class Holder  extends RecyclerView.ViewHolder {
         imageView = itemView.findViewById(R.id.imageview);
         tvtille1 = itemView.findViewById(R.id.TvTittle1);
         tvtittle2 = itemView.findViewById(R.id.TvTittle2);
+        tvdummy = itemView.findViewById(R.id.dummy);
     }
 
     public void setData(ResponseModel responseModel) {

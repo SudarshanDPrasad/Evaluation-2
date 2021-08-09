@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,13 +22,26 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class ItemListFragment extends Fragment {
+public class ItemListFragment extends Fragment implements ItemClickListener{
 
     private RecyclerView recyclerView;
     private Button btn1;
     private ArrayList<ResponseModel> responseModels = new ArrayList<>();
     private ListAdaptor listAdaptor;
 
+
+    public static ItemListFragment newInsatnce(){
+        ItemListFragment fragment = new ItemListFragment();
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if(getArguments() !=null){
+
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -75,6 +89,7 @@ public class ItemListFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerview);
         btn1 = view.findViewById(R.id.button1);
 
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,5 +97,11 @@ public class ItemListFragment extends Fragment {
                 setRecycler();
             }
         });
+    }
+
+
+    @Override
+    public void onItemClick(ResponseModel responseModel) {
+BlankFragment blankFragment
     }
 }

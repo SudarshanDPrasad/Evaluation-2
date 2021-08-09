@@ -3,6 +3,8 @@ package com.example.evaluation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +14,7 @@ import java.util.List;
 public class ListAdaptor extends RecyclerView.Adapter<ListHolder> {
 
     private List<ResponseModel> responseModelList;
+
 
     public ListAdaptor(List<ResponseModel> responseModelList) {
         this.responseModelList = responseModelList;
