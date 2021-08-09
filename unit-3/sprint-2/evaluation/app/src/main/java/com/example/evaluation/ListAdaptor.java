@@ -20,7 +20,7 @@ public class ListAdaptor extends RecyclerView.Adapter<ListHolder> {
     @NonNull
     @Override
     public ListHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_item_list, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout, parent, false);
         return new ListHolder(view);
     }
 

@@ -5,22 +5,36 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class ItemListFragment extends Fragment {
 
     private RecyclerView recyclerView;
+    private Button btn1;
     private ArrayList<ResponseModel> responseModels = new ArrayList<>();
+    private ListAdaptor listAdaptor;
 
+
+    @Override
+    public void onCreate(@Nullable  Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        dilaydata();
+        setRecycler();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,7 +47,14 @@ public class ItemListFragment extends Fragment {
     public void onViewCreated(@NonNull  View view, @Nullable  Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initviews(view);
-        setRecycler();
+
+    }
+
+    private void dilaydata() {
+        listAdaptor = new ListAdaptor(responseModels);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(listAdaptor);
     }
 
     private void setRecycler() {
@@ -41,9 +62,25 @@ public class ItemListFragment extends Fragment {
         Call<ArrayList<ResponseModel>> call = apiService.data("shivarajp",
                 "2cbe00030c04472c9d8ad4b0ec112dbe","raw",
                 "c651391e428182f08d60d59e79073f3fcf79b858","nobroker");
+        call.enqueue(new Callback<ArrayList<ResponseModel>>() {
+            @Override
+            public void onResponse(Call<ArrayList<ResponseModel>> call, Response<ArrayList<ResponseModel>> response) {
+                responseModels = response.body();
+                listAdaptor.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<ResponseModel>> call, Throwable t) {
+                Toast.makeText(getContext(),t.getMessage(),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void initviews(View view) {
         recyclerView = view.findViewById(R.id.recyclerview);
+        btn1 = view.findViewById(R.id.button1);
+
+
     }
 }

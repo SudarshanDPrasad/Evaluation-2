@@ -6,9 +6,15 @@
     android:background="#FFB6C1"
     tools:context=".ItemListFragment">
 
-   <androidx.recyclerview.widget.RecyclerView
-       android:layout_width="match_parent"
-       android:id="@+id/recyclerview"
-       android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_below="@id/button1"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>
