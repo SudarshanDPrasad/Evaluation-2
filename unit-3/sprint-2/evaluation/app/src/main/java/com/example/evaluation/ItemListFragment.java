@@ -22,7 +22,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class ItemListFragment extends Fragment implements ItemClickListener{
+public class ItemListFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private Button btn1;
@@ -100,8 +100,5 @@ public class ItemListFragment extends Fragment implements ItemClickListener{
     }
 
 
-    @Override
-    public void onItemClick(ResponseModel responseModel) {
-BlankFragment blankFragment
-    }
+
 }
