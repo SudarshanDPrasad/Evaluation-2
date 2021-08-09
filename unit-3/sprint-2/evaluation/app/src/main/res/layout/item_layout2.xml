@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFB6C1"
+    tools:context=".ItemListFragment">
+
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="223dp"
+        android:layout_height="177.38dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/birds3" />
+
+    <TextView
+        android:id="@+id/TvTittle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageview"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
+        android:text="Title 1"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/TvTittle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TvTittle1"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:text="SubTitle 1"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/dummy"
+        android:text="Add some dummy text here"
+        android:layout_below="@id/TvTittle2"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
