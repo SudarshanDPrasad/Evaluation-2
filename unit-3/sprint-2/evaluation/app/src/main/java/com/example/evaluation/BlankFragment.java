@@ -30,6 +30,7 @@ public class BlankFragment extends Fragment {
     private Adaptor adaptor;
     private TextView tv2;
 
+  
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
