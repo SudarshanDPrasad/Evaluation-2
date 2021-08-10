@@ -19,7 +19,7 @@ import java.util.Objects;
 
 public class FileOperationService extends Service {
 
-    private static final String TAG = FileOperationService.class.getSimpleName(); // Golad variable to TAG
+    private static final String TAG = FileOperationService.class.getSimpleName(); // Global variable to TAG
 
     private String name = "";
 
@@ -80,7 +80,7 @@ public class FileOperationService extends Service {
         try {
             File directory = new File(getFilesDir() + File.separator + "NameFolder");
 
-            if (directory.exists()) {
+            if (!directory.exists()) {
                 directory.mkdir();
             }
 
