@@ -1,6 +1,7 @@
 package com.example.loadtenanimalsprofileinafragment
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
@@ -14,16 +15,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        launchFragment()
+        Buttontolauch.setOnClickListener {
+            launchFragment()
+            Buttontolauch.visibility = View.GONE
+        }
     }
 
     private fun launchFragment() {
         var fragmentManager = supportFragmentManager
         val animalFragment = AnimalFragment()
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.add(R.id.change,animalFragment).commit()
-
+        fragmentTransaction.replace(R.id.change, animalFragment).commit()
 
     }
 }

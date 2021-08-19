@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/change"
@@ -8,4 +8,12 @@
     tools:context=".MainActivity">
 
 
-</FrameLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/Buttontolauch"
+        android:text="Start to see the Images"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
