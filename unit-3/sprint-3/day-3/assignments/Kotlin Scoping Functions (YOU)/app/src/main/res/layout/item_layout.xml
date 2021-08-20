@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/TvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Sudarshan" />
+
+        <TextView
+            android:id="@+id/TvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TvName"
+            android:layout_margin="20dp"
+            android:text="sudarshan" />
+
+        <TextView
+            android:id="@+id/TvId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TvEmail"
+            android:layout_margin="20dp"
+            android:text="sudarshan" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/IvImage"
+            android:layout_below="@id/TvId"
+            android:layout_margin="20dp"
+            android:layout_height="180dp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
