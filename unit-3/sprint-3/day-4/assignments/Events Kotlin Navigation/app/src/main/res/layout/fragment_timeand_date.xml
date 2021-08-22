@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TimeandDateFragment">
+
+
+    <EditText
+        android:id="@+id/etStartDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:ems="10"
+        android:hint="Enter the Start Date"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etEndDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etStartDate"
+        android:layout_margin="20dp"
+        android:ems="10"
+        android:hint="Enter the End Date"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etStartTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etEndDate"
+        android:layout_margin="20dp"
+        android:ems="10"
+        android:hint="Enter the Start Time"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etEndTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etStartTime"
+        android:layout_margin="20dp"
+        android:ems="10"
+        android:hint="Enter the End Time"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btntoprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etEndTime"
+        android:text="Enter the price Page"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

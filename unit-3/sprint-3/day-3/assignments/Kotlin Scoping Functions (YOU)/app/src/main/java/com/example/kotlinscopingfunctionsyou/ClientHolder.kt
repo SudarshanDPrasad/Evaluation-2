@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_layout.view.*
 
-class ClientHolder(val view: View) : RecyclerView.ViewHolder(view) {
+class ClientHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
     fun setData(data: Data){
 
@@ -14,7 +14,6 @@ class ClientHolder(val view: View) : RecyclerView.ViewHolder(view) {
             TvEmail.text = data.email
             TvId.text = data.id.toString()
             Glide.with(IvImage).load(data.avatar).into(IvImage)
-
         }
     }
 }

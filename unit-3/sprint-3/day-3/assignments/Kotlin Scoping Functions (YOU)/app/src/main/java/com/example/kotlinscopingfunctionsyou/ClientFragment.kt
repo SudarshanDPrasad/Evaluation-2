@@ -1,10 +1,11 @@
 package com.example.kotlinscopingfunctionsyou
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_client.*
@@ -16,7 +17,7 @@ import retrofit2.Response
 class ClientFragment : Fragment(R.layout.fragment_client) {
 
 
-    private lateinit var responseDTO: List<ResponseDTO>
+    private lateinit var responseDTO: List<Data>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,21 +28,18 @@ class ClientFragment : Fragment(R.layout.fragment_client) {
     private fun callApi() {
 
         val apiClient = Network.getRetrofitInstance().create(ApiClient::class.java)
-        apiClient.getposts(5)
-            .enqueue(object : Callback<List<ResponseDTO>> {
-                override fun onResponse(
-                    call: Call<List<ResponseDTO>>,
-                    response: Response<List<ResponseDTO>>
-                ) {
+        val call = apiClient.getposts(2)
+           call.enqueue(object : Callback<ResponseDTO>{
+                override fun onResponse(call: Call<ResponseDTO>, response: Response<ResponseDTO>) {
 
                     response.body()?.run {
-                        responseDTO = this
+                        responseDTO = data
                         setRecyclerView()
                     }
                 }
 
-                override fun onFailure(call: Call<List<ResponseDTO>>, t: Throwable) {
-
+                override fun onFailure(call: Call<ResponseDTO>, t: Throwable) {
+                    Toast.makeText(context,"error",Toast.LENGTH_LONG).show()
                 }
 
             })
@@ -50,7 +48,9 @@ class ClientFragment : Fragment(R.layout.fragment_client) {
     private fun setRecyclerView() {
         val adaptor = ClientAdaptor(responseDTO)
         val linearLayoutManager = LinearLayoutManager(context)
-        recyclerview.layoutManager = linearLayoutManager
         recyclerview.adapter = adaptor
+        recyclerview.layoutManager = linearLayoutManager
     }
 }
+
+//bro i cannnot able to handle your pc properly

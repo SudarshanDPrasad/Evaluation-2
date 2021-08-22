@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_events"
+    app:startDestination="@id/eventsDeatilsFragment2">
+
+    <fragment
+        android:id="@+id/eventsDeatilsFragment2"
+        android:name="com.example.eventskotlin.EventsDeatilsFragment"
+        android:label="fragment_events_deatils"
+        tools:layout="@layout/fragment_events_deatils" >
+        <action
+            android:id="@+id/action_eventsDeatilsFragment2_to_timeandDateFragment2"
+            app:destination="@id/timeandDateFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/timeandDateFragment2"
+        android:name="com.example.eventskotlin.TimeandDateFragment"
+        android:label="fragment_timeand_date"
+        tools:layout="@layout/fragment_timeand_date" >
+        <action
+            android:id="@+id/action_timeandDateFragment2_to_priceDetailsFragment2"
+            app:destination="@id/priceDetailsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/priceDetailsFragment2"
+        android:name="com.example.eventskotlin.PriceDetailsFragment"
+        android:label="fragment_price_details"
+        tools:layout="@layout/fragment_price_details" />
+</navigation>

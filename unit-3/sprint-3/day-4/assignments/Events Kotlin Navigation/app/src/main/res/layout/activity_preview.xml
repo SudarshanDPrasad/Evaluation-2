@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PreviewActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tvtittle"
+        android:text="Masai"
+        android:textSize="20dp"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tvdescription"
+        android:text="Masai"
+        android:layout_below="@id/tvtittle"
+        android:textSize="20dp"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tvstartdate"
+        android:layout_below="@id/tvdescription"
+        android:text="Masai"
+        android:textSize="20dp"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tvenddate"
+        android:layout_below="@id/tvstartdate"
+        android:text="Masai"
+        android:textSize="20dp"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tvstarttime"
+        android:layout_below="@id/tvenddate"
+        android:text="Masai"
+        android:textSize="20dp"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tvendtime"
+        android:text="Masai"
+        android:layout_below="@id/tvstarttime"
+        android:textSize="20dp"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tvcurrency"
+        android:text="Masai"
+        android:layout_below="@id/tvendtime"
+        android:textSize="20dp"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tvPrice"
+        android:text="Masai"
+        android:layout_below="@id/tvcurrency"
+        android:textSize="20dp"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/tvthankyou"
+        android:text="Thank You"
+        android:layout_below="@id/tvPrice"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>
