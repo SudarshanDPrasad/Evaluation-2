@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Response
 
-class Musicadaptor(val responseDto: List<ReponseDto>) : RecyclerView.Adapter<MusicHolder>() {
+class Musicadaptor(val responseDto: List<Resultdto>) : RecyclerView.Adapter<MusicHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MusicHolder {
        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_layout,parent,false)
        return MusicHolder(view)
@@ -13,10 +13,11 @@ class Musicadaptor(val responseDto: List<ReponseDto>) : RecyclerView.Adapter<Mus
     }
 
     override fun onBindViewHolder(holder: MusicHolder, position: Int) {
-        TODO("Not yet implemented")
+        val model : Resultdto = responseDto[position]
+        holder.setData(model)
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return responseDto.size
     }
 }

@@ -1,34 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="20dp"
+    android:layout_height="wrap_content">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_width="match_parent"
             android:id="@+id/ivImageView"
-            android:layout_height="180dp" />
+            android:layout_width="150dp"
+            android:layout_height="180dp"
+            android:layout_margin="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/birds4" />
 
         <TextView
-            android:layout_width="wrap_content"
             android:id="@+id/tvTrackName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
             android:text="sudarhsna"
-            android:layout_below="@id/ivImageView"
-            android:layout_height="wrap_content" />
+            android:layout_toRightOf="@id/ivImageView" />
 
         <TextView
-            android:layout_width="wrap_content"
             android:id="@+id/tvArtistName"
-            android:layout_below="@id/tvTrackName"
-            android:layout_height="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sudarhsan"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/ivImageView"
+            android:layout_below="@id/tvTrackName" />
 
         <TextView
-            android:layout_width="wrap_content"
             android:id="@+id/tvCollectionName"
-            android:layout_below="@id/tvArtistName"
-            android:layout_height="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/ivImageView"
+            android:layout_marginLeft="20dp"
+            android:text="Sudarshan"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvArtistName" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
