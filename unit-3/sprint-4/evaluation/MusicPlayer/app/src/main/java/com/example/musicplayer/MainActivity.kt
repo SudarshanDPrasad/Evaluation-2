@@ -1,5 +1,6 @@
 package com.example.musicplayer
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -9,7 +10,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnItemClickListener {
 
     private lateinit var listofmusic: List<Resultdto>
 
@@ -43,7 +44,12 @@ class MainActivity : AppCompatActivity() {
 
         val adaptor = Musicadaptor(listofmusic)
         val linearLayoutManager = LinearLayoutManager(this)
-        RecyclerView.adapter = adaptor
-        RecyclerView.layoutManager = linearLayoutManager
+        rcRecyclerView.adapter = adaptor
+        rcRecyclerView.layoutManager = linearLayoutManager
+    }
+
+    override fun onItemClick(item: Resultdto, position: Int) {
+        val intent = Intent(this@MainActivity,PlayActivity::class.java)
+        startActivity(intent)
     }
 }

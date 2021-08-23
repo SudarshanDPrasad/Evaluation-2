@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayActivity">
+
+    <ImageView
+        android:id="@+id/ivImageView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/birds4" />
+
+    <TextView
+        android:id="@+id/tvTrackName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/ivImageView"
+        android:text="sudarhsna" />
+
+    <TextView
+        android:id="@+id/tvArtistName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTrackName"
+        android:layout_marginLeft="20dp"
+        android:text="Sudarhsan" />
+
+    <TextView
+        android:id="@+id/tvCollectionName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvArtistName"
+        android:layout_marginLeft="20dp"
+        android:text="Sudarshan" />
+
+
+    <Button
+        android:id="@+id/btntoplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCollectionName"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_baseline_play_arrow_24" />
+
+    <Button
+        android:id="@+id/btntopause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCollectionName"
+        android:layout_margin="20dp"
+        android:layout_toRightOf="@id/btntoplay"
+        android:background="@drawable/ic_baseline_pause_24" />
+
+</RelativeLayout>

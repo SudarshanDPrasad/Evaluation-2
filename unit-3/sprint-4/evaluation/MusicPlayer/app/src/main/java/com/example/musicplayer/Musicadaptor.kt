@@ -20,4 +20,5 @@ class Musicadaptor(val responseDto: List<Resultdto>) : RecyclerView.Adapter<Musi
     override fun getItemCount(): Int {
         return responseDto.size
     }
+
 }
