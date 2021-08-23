@@ -42,14 +42,20 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
 
     private fun setRecyclerView() {
 
-        val adaptor = Musicadaptor(listofmusic)
+        val adaptor = Musicadaptor(listofmusic,this)
         val linearLayoutManager = LinearLayoutManager(this)
         rcRecyclerView.adapter = adaptor
         rcRecyclerView.layoutManager = linearLayoutManager
     }
 
-    override fun onItemClick(item: Resultdto, position: Int) {
+    override fun onItemClick(position: Int) {
         val intent = Intent(this@MainActivity,PlayActivity::class.java)
+        intent.putExtra("ArtistName",listofmusic[position].artistName)
+        intent.putExtra("TrackName",listofmusic[position].trackName)
+        intent.putExtra("CollectionName",listofmusic[position].collectionName)
+        intent.putExtra("Image",listofmusic[position].artworkUrl100)
+        intent.putExtra("MusicStart",listofmusic[position].previewUrl)
         startActivity(intent)
     }
+
 }
