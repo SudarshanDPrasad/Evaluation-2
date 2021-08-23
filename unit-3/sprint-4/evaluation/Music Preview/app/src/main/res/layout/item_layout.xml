@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="30dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="182dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/birds2" />
+
+        <TextView
+            android:id="@+id/tvTrackName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivImage"
+            android:layout_margin="20dp"
+            android:text="@string/sudarshan"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvArtistName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTrackName"
+            android:layout_margin="20dp"
+            android:text="@string/sudarshan"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvCollectionName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvArtistName"
+            android:layout_margin="20dp"
+            android:text="@string/sudarshan"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
