@@ -18,10 +18,10 @@ class MainActivity : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.IO).launch {
 
-            val res1: ApiClient = async {
+            val res1: String = async {
 
-//                delay(3000)
-//                val data: String = getDataFromApi()
+                delay(3000)
+                val data: String = getDataFromApi()
                 val apiClient = Network.getInstance().create(ApiClient::class.java)
                 apiClient.getInidanToons().enqueue(
                     object : Callback<ResponseModel> {
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
                             response.body()?.run {
 //                                indianToon = response.body()!!
-                               tvMovieName.text =  response.body()?.indianToons?.get(5)?.movieName.toString()
+                               tvMovieName.text =  response.body()?.indianToons?.get(3)?.movieName.toString()
                                 Log.d("sudarshan", response.body()?.indianToons?.get(0).toString()+" ")
                             }
                         }
@@ -42,12 +42,12 @@ class MainActivity : AppCompatActivity() {
 
                     }
                 )
-                return@async apiClient
+                return@async "apiClient"
             }.await()
 
             val res2: String = async {
 
-//                val data1: String = getDataFromApi()
+                val data1: String = getDataFromApi()
                 val apiClient1 = Network.getInstance().create(ApiClient::class.java)
                 apiClient1.getInidanToons().enqueue(
                     object : Callback<ResponseModel> {
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                         ) {
 
                             response.body()?.run {
-                                tvDirectorName.text = response.body()?.indianToons?.get(5)?.director?.toString()
+                                tvDirectorName.text = response.body()?.indianToons?.get(3)?.director?.toString()
                             }
                         }
 
@@ -69,15 +69,43 @@ class MainActivity : AppCompatActivity() {
                 return@async "apiClient1"
             }.await()
 
+            val res3: String = async {
+
+                val data2: String = getDataFromApi()
+                val apiClient3 = Network.getInstance().create(ApiClient::class.java)
+                apiClient3.getInidanToons().enqueue(
+                    object : Callback<ResponseModel> {
+                        override fun onResponse(
+                            call: Call<ResponseModel>,
+                            response: Response<ResponseModel>,
+                        ) {
+
+                            response.body()?.run {
+                                tvLanguage.text = response.body()?.indianToons?.get(3)?.language?.toString()
+                            }
+                        }
+
+                        override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
+                        }
+
+                    }
+                )
+                return@async "apiClient3"
+            }.await()
+
             CoroutineScope(Dispatchers.Main).launch {
                 tvDirectorName.text = res2
-                tvMovieName.text = res1.toString()
+                tvMovieName.text = res1
+                tvLanguage.text = res3
             }
         }
     }
 
-//    suspend fun getDataFromApi(): String {
-//        delay(3000)
-//        return "api response recieved"
-//    }
+    suspend fun getDataFromApi(): String {
+        delay(3000)
+        return "api response recieved"
+
+    }
+
+
 }
