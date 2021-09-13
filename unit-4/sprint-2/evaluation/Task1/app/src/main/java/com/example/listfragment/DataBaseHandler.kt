@@ -51,10 +51,10 @@ class DataBaseHandler(val context: Context) :
         }
     }
 
-    fun getAllTask(): MutableList<AddModel> {
+    fun getAllTask(title : String): MutableList<AddModel> {
         val tasklist = mutableListOf<AddModel>()
         val db = readableDatabase
-        val query = "select * from $TABLE_NAME"
+        val query = "select * from $TABLE_NAME where $ITEM_NAME like $title"
         val cursor = db.rawQuery(query, null)
         if (cursor != null && cursor.count > 0) {
             cursor.moveToFirst()
