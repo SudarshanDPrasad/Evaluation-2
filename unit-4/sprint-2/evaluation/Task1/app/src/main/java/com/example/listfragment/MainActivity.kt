@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.fragment_search.*
 class MainActivity : AppCompatActivity() {
 
     private val addModel = listOf<AddModel>()
+    private var tasksList = mutableListOf<AddModel>()
     private val dataBaseHandler = DataBaseHandler(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,18 +19,15 @@ class MainActivity : AppCompatActivity() {
 
         btntoSave.setOnClickListener{
             dataBaseHandler?.inserTask(etAddItem.text.toString(),eDescItem.text.toString(),etPriceItem.text.toString().toInt())
+            tasksList.addAll(dataBaseHandler.getAllTask())
             val LayoutManager = LinearLayoutManager(this)
-            val adaptor = ItemAdaptor(addModel)
+            val adaptor = ItemAdaptor(addModel,tasksList)
             RecyclerViewSearch.adapter = adaptor
             RecyclerViewSearch.layoutManager = LayoutManager
         }
 
+
         btntoSearch.setOnClickListener{
-            dataBaseHandler.getAllTask(ettoSearch.text.toString())
-            val LayoutManager = LinearLayoutManager(this)
-            val adaptor = ItemAdaptor(addModel)
-            RecyclerViewSearch.adapter = adaptor
-            RecyclerViewSearch.layoutManager = LayoutManager
 
         }
     }

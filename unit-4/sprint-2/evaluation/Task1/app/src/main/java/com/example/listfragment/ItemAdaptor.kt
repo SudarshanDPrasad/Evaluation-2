@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ItemAdaptor(val addModel: List<AddModel>) : RecyclerView.Adapter<ItemHolder>() {
+class ItemAdaptor(val addModel: List<AddModel> ,val tasksList: MutableList<AddModel>) : RecyclerView.Adapter<ItemHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
@@ -15,7 +15,7 @@ class ItemAdaptor(val addModel: List<AddModel>) : RecyclerView.Adapter<ItemHolde
 
     override fun onBindViewHolder(holder: ItemHolder, position: Int) {
 
-        var addModel: AddModel = addModel[position]
+        var addModel = tasksList[position]
         holder.tvsarchName.text = addModel.addItemName
         holder.tvSearchPrice.text = addModel.addPrice.toString()
 
