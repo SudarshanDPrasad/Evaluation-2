@@ -2,7 +2,7 @@ package com.example.listfragment
 
 class AddModel {
     var id = 0
-    var addItem = ""
+    var addItemName = ""
     var addDescription = ""
-    var addPrice = ""
+    var addPrice = 0
 }
