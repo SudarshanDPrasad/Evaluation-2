@@ -22,6 +22,10 @@ class MainActivity : AppCompatActivity() {
 
         btntoSearch.setOnClickListener{
             dataBaseHandler.getAllTask(ettoSearch.text.toString())
+        }
+
+        btntoSearch.setOnClickListener{
+            dataBaseHandler.getAllTask(ettoSearch.text.toString())
             val LayoutManager = LinearLayoutManager(this)
             val adaptor = ItemAdaptor(addModel)
             RecyclerViewSearch.adapter = adaptor
