@@ -78,9 +78,6 @@ class DataBaseHandler(val context: Context) :
         return tasklist
     }
 
-    fun searchItem(){
-
-    }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         TODO("Not yet implemented")

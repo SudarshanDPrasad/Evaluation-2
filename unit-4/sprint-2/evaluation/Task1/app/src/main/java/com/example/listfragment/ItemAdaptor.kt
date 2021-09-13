@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class ItemAdaptor(val addModel: List<AddModel>) : RecyclerView.Adapter<ItemHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
         return ItemHolder(view)
@@ -36,23 +37,5 @@ class ItemHolder( view: View) : RecyclerView.ViewHolder(view) {
         tvSearchPrice = view.findViewById(R.id.tvSearchPrice)
 
     }
-import android.view.View
-import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
-
-class ItemAdaptor() : RecyclerView.Adapter<ItemHolder>()  {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
-        TODO("Not yet implemented")
-    }
-
-    override fun onBindViewHolder(holder: ItemHolder, position: Int) {
-        TODO("Not yet implemented")
-    }
-
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
-}
-class ItemHolder(val view: View) : RecyclerView.ViewHolder(view){
 
 }

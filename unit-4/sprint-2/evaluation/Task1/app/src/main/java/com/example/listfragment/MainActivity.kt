@@ -18,10 +18,10 @@ class MainActivity : AppCompatActivity() {
 
         btntoSave.setOnClickListener{
             dataBaseHandler?.inserTask(etAddItem.text.toString(),eDescItem.text.toString(),etPriceItem.text.toString().toInt())
-        }
-
-        btntoSearch.setOnClickListener{
-            dataBaseHandler.getAllTask(ettoSearch.text.toString())
+            val LayoutManager = LinearLayoutManager(this)
+            val adaptor = ItemAdaptor(addModel)
+            RecyclerViewSearch.adapter = adaptor
+            RecyclerViewSearch.layoutManager = LayoutManager
         }
 
         btntoSearch.setOnClickListener{
@@ -32,6 +32,5 @@ class MainActivity : AppCompatActivity() {
             RecyclerViewSearch.layoutManager = LayoutManager
 
         }
-
     }
 }
