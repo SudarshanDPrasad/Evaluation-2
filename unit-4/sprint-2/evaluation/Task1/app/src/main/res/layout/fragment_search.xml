@@ -14,10 +14,11 @@
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_toRightOf="@id/ettoSearch"
+        android:layout_height="wrap_content"
+        android:id="@+id/btntoSearch"
         android:layout_marginLeft="10dp"
-        android:text="Enter"
-        android:layout_height="wrap_content" />
+        android:layout_toRightOf="@id/ettoSearch"
+        android:text="Enter" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

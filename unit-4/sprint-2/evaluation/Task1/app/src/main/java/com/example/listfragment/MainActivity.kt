@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentTransaction
 import kotlinx.android.synthetic.main.fragment_item.*
+import kotlinx.android.synthetic.main.fragment_search.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +15,10 @@ class MainActivity : AppCompatActivity() {
 
         btntoSave.setOnClickListener{
             dataBaseHandler?.inserTask(etAddItem.text.toString(),eDescItem.text.toString(),etPriceItem.text.toString().toInt())
+        }
+
+        btntoSearch.setOnClickListener{
+            dataBaseHandler.getAllTask(ettoSearch.text.toString())
         }
 
     }
