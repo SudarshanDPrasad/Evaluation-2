@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ItemFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Add Items"
+        android:layout_margin="10dp"
+        android:id="@+id/tvaddItems"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:id="@+id/etAddItem"
+        android:hint="Add Item Name"
+        android:layout_below="@id/tvaddItems"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:id="@+id/eDescItem"
+        android:hint="Add Description Name"
+        android:layout_below="@id/etAddItem"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:id="@+id/etPriceItem"
+        android:hint="Add Price "
+        android:layout_below="@id/eDescItem"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/btntoSave"
+        android:layout_below="@id/etPriceItem"
+        android:text="Save"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

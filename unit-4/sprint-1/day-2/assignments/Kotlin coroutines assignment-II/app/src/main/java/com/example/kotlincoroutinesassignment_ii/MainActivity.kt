@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             val res1: String = async {
 
                 delay(3000)
-                val data: String = getDataFromApi()
+               // val data: String = getDataFromApi()
                 val apiClient = Network.getInstance().create(ApiClient::class.java)
                 apiClient.getInidanToons().enqueue(
                     object : Callback<ResponseModel> {
@@ -42,6 +42,8 @@ class MainActivity : AppCompatActivity() {
 
                     }
                 )
+
+
                 return@async "apiClient"
             }.await()
 
@@ -106,6 +108,5 @@ class MainActivity : AppCompatActivity() {
         return "api response recieved"
 
     }
-
-
+    
 }
