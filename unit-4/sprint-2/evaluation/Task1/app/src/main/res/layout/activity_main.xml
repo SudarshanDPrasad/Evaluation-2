@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_toRightOf="@id/TvSearchresults"
-        android:text="02" />
+        android:text="0" />
 
     <fragment
         android:id="@+id/ItemFragment"

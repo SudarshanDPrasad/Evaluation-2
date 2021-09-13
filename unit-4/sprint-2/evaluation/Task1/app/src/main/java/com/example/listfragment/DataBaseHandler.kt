@@ -79,6 +79,34 @@ class DataBaseHandler(val context: Context) :
     }
 
 
+    fun getSearchTask(title : String): MutableList<AddModel> {
+        val tasklist = mutableListOf<AddModel>()
+        val db = readableDatabase
+        val query = "select * from $TABLE_NAME where $ITEM_NAME like '$title'"
+        val cursor = db.rawQuery(query, null)
+        if (cursor != null && cursor.count > 0) {
+            cursor.moveToFirst()
+
+
+            do {
+                val id = cursor.getInt(cursor.getColumnIndex(ID))
+                val item = cursor.getString(cursor.getColumnIndex(ITEM_NAME))
+                val desc = cursor.getString(cursor.getColumnIndex(DESCRIPTION))
+                val itemprice = cursor.getInt(cursor.getColumnIndex(PRICE))
+
+                val addModel = AddModel()
+                addModel.id = id
+                addModel.addDescription = desc
+                addModel.addItemName = item
+                addModel.addPrice = itemprice
+
+                tasklist.add(addModel)
+            } while (cursor.moveToNext())
+        }
+        return tasklist
+    }
+
+
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         TODO("Not yet implemented")
     }
